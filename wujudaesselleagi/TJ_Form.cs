@@ -340,7 +340,7 @@ namespace wujudaesselleagi
 
         }
 
-        private void item_nm_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void item_nm_MouseDoubleClick(object sender, MouseEventArgs e) 
         {
 
         }

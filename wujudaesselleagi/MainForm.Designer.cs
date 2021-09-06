@@ -21,7 +21,7 @@ namespace wujudaesselleagi
             base.Dispose(disposing);
         }
 
-        #region Windows Form 디자이너에서 생성한 코드
+         #region Windows Form 디자이너에서 생성한 코드
 
         /// <summary>
         /// 디자이너 지원에 필요한 메서드입니다. 
@@ -53,7 +53,7 @@ namespace wujudaesselleagi
             this.treeView1.ForeColor = System.Drawing.SystemColors.Window;
             this.treeView1.ItemHeight = 20;
             this.treeView1.Location = new System.Drawing.Point(1, 196);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "Item_list";
             treeNode1.Text = "품목";
@@ -82,7 +82,7 @@ namespace wujudaesselleagi
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(1, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(286, 198);
             this.panel1.TabIndex = 3;
@@ -94,7 +94,7 @@ namespace wujudaesselleagi
             this.tabControl1.Location = new System.Drawing.Point(286, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1838, 1192);
+            this.tabControl1.Size = new System.Drawing.Size(1838, 1342);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 5;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.DrawItem_eve);
@@ -104,12 +104,12 @@ namespace wujudaesselleagi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2124, 1060);
+            this.ClientSize = new System.Drawing.Size(2124, 1343);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.treeView1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(286, 0, 0, 0);
             this.Text = "후라토식당.ver1.0";

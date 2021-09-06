@@ -60,9 +60,9 @@ namespace wujudaesselleagi
 
                         Command.CommandText = "dbo.item_list_S1";
 
-                        Command.Parameters.AddWithValue("@item_cd", "");
+                        Command.Parameters.AddWithValue("@item_cd", "") ;
 
-                        Command.Parameters.AddWithValue("@item_nm", "");
+                        Command.Parameters.AddWithValue("@item_nm", "") ;
 
                         dgv_Search.ReadOnly = false;
 
@@ -94,7 +94,7 @@ namespace wujudaesselleagi
 
                         DBConn.Close();
                         dgv_Search.AllowUserToAddRows = false;
-                        dgv_Search.CurrentRow.Cells["item_cd1"].ReadOnly = true;
+                        dgv_Search.Columns["item_cd1"].ReadOnly = true;
 
                     }
 
@@ -163,7 +163,7 @@ namespace wujudaesselleagi
 
                     DBConn.Close();
                     dgv_Search.AllowUserToAddRows = false;
-                    dgv_Search.CurrentRow.Cells["item_cd1"].ReadOnly = true;
+                    dgv_Search.Columns["item_cd1"].ReadOnly = true;
                 }
 
 
@@ -251,7 +251,7 @@ namespace wujudaesselleagi
                         DBConn.Close();
                         MessageBox.Show("데이터가 저장됐습니다.", "Information");
                         dgv_Search.AllowUserToAddRows = false;
-                        dgv_Search.CurrentRow.Cells["item_cd1"].ReadOnly = true;
+                        dgv_Search.Columns["item_cd1"].ReadOnly = true;
 
                     }
                 }
@@ -279,7 +279,8 @@ namespace wujudaesselleagi
                     MessageBox.Show("수정에 성공 했습니다.", "Information");
                     Command.ExecuteNonQuery();
                     dgv_Search.AllowUserToAddRows = false;
-                    dgv_Search.CurrentRow.Cells["item_cd1"].ReadOnly = true;
+                    dgv_Search.Columns["item_cd1"].ReadOnly = true;
+
 
 
 
@@ -419,7 +420,7 @@ namespace wujudaesselleagi
                         Command.ExecuteNonQuery();
                         MessageBox.Show("삭제에 성공 했습니다.", "Information");
                 dgv_Search.AllowUserToAddRows = false;
-
+                dgv_Search.Columns["item_cd1"].ReadOnly = true;
 
                 //DB 닫기
 
@@ -470,7 +471,7 @@ namespace wujudaesselleagi
             writer.Close();
 
         }
-
+         
         private void item_nm_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
@@ -484,6 +485,7 @@ namespace wujudaesselleagi
         private void Add_item_Click(object sender, EventArgs e)
         {
             dgv_Search.AllowUserToAddRows = true;
-        }
+            dgv_Search.Columns["item_cd1"].ReadOnly = false;
+        } 
     }
 }

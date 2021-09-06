@@ -31,8 +31,8 @@ namespace wujudaesselleagi
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(valju));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(valju));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Save_item = new System.Windows.Forms.Button();
             this.Save_button = new System.Windows.Forms.Button();
@@ -40,12 +40,12 @@ namespace wujudaesselleagi
             this.select_litem = new System.Windows.Forms.Button();
             this.Delete_item = new System.Windows.Forms.Button();
             this.Update_item = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.dgv_Search = new System.Windows.Forms.DataGridView();
             this.order_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tj_cd = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.order_tj_nm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.o = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tjcd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).BeginInit();
             this.SuspendLayout();
@@ -131,16 +131,6 @@ namespace wujudaesselleagi
             this.Update_item.Text = "수정";
             this.Update_item.UseVisualStyleBackColor = false;
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel9.Location = new System.Drawing.Point(2, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(247, 131);
-            this.panel9.TabIndex = 34;
-            // 
             // dgv_Search
             // 
             this.dgv_Search.AllowUserToAddRows = false;
@@ -154,18 +144,20 @@ namespace wujudaesselleagi
             this.dgv_Search.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.order_no,
             this.order_date,
-            this.tj_cd,
-            this.order_tj_nm});
+            this.o,
+            this.tjcd});
             this.dgv_Search.Location = new System.Drawing.Point(-1, 137);
             this.dgv_Search.Name = "dgv_Search";
             this.dgv_Search.RowHeadersWidth = 123;
             this.dgv_Search.RowTemplate.Height = 23;
-            this.dgv_Search.Size = new System.Drawing.Size(1487, 257);
+            this.dgv_Search.Size = new System.Drawing.Size(1487, 752);
             this.dgv_Search.TabIndex = 35;
             // 
             // order_no
             // 
+            this.order_no.DataPropertyName = "order_no";
             this.order_no.HeaderText = "발주번호";
+            this.order_no.MinimumWidth = 8;
             this.order_no.Name = "order_no";
             // 
             // order_date
@@ -175,34 +167,49 @@ namespace wujudaesselleagi
             dataGridViewCellStyle1.NullValue = null;
             this.order_date.DefaultCellStyle = dataGridViewCellStyle1;
             this.order_date.HeaderText = "발주날짜";
+            this.order_date.MinimumWidth = 8;
             this.order_date.Name = "order_date";
             // 
-            // tj_cd
+            // o
             // 
-            this.tj_cd.DataPropertyName = "tj_cd";
-            this.tj_cd.HeaderText = "거래처코드";
-            this.tj_cd.Name = "tj_cd";
-            this.tj_cd.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.tj_cd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.o.DataPropertyName = "o";
+            this.o.HeaderText = "거래처코드";
+            this.o.MinimumWidth = 8;
+            this.o.Name = "o";
+            this.o.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.o.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // order_tj_nm
+            // tjcd
             // 
-            this.order_tj_nm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.order_tj_nm.DataPropertyName = "order_tj_nm";
-            this.order_tj_nm.HeaderText = "거래처명";
-            this.order_tj_nm.Name = "order_tj_nm";
+            this.tjcd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.tjcd.DataPropertyName = "tjcd";
+            this.tjcd.HeaderText = "거래처명";
+            this.tjcd.MinimumWidth = 8;
+            this.tjcd.Name = "tjcd";
+            this.tjcd.Width = 150;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel9.Location = new System.Drawing.Point(2, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(247, 131);
+            this.panel9.TabIndex = 34;
             // 
             // valju
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1487, 898);
+            this.ClientSize = new System.Drawing.Size(1487, 733);
             this.Controls.Add(this.dgv_Search);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel9);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "valju";
-            this.Text = "valju";
+            this.Text = "발주";
             this.Load += new System.EventHandler(this.valju_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).EndInit();
@@ -223,7 +230,7 @@ namespace wujudaesselleagi
         private System.Windows.Forms.DataGridView dgv_Search;
         private DataGridViewTextBoxColumn order_no;
         private DataGridViewTextBoxColumn order_date;
-        private DataGridViewButtonColumn tj_cd;
-        private DataGridViewTextBoxColumn order_tj_nm;
+        private DataGridViewButtonColumn o;
+        private DataGridViewTextBoxColumn tjcd;
     }
 }

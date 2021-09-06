@@ -167,24 +167,28 @@ namespace wujudaesselleagi
             // 
             this.tj_cd.DataPropertyName = "tj_cd";
             this.tj_cd.HeaderText = "거래처코드";
+            this.tj_cd.MinimumWidth = 8;
             this.tj_cd.Name = "tj_cd";
             // 
             // tj_nm
             // 
             this.tj_nm.DataPropertyName = "tj_nm";
             this.tj_nm.HeaderText = "거래처이름";
+            this.tj_nm.MinimumWidth = 8;
             this.tj_nm.Name = "tj_nm";
             // 
             // tj_leader
             // 
             this.tj_leader.DataPropertyName = "tj_leader";
             this.tj_leader.HeaderText = "대표자명";
+            this.tj_leader.MinimumWidth = 8;
             this.tj_leader.Name = "tj_leader";
             // 
             // tj_address
             // 
             this.tj_address.DataPropertyName = "tj_address";
             this.tj_address.HeaderText = "주소";
+            this.tj_address.MinimumWidth = 8;
             this.tj_address.Name = "tj_address";
             // 
             // TJ_Form
@@ -192,12 +196,13 @@ namespace wujudaesselleagi
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1470, 907);
+            this.ClientSize = new System.Drawing.Size(1470, 733);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.dgv_Search);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TJ_Form";
-            this.Text = "TJForm";
+            this.Text = "거래처정보";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).EndInit();
             this.ResumeLayout(false);

@@ -17,7 +17,7 @@ namespace wujudaesselleagi
         {
             InitializeComponent();
         }
-
+         
         private void valju_Load(object sender, EventArgs e)
         {
           
