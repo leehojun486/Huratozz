@@ -36,6 +36,9 @@
     <Reference Include="ERDBManager, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ERDBManager.1.0.1\lib\ERDBManager.dll</HintPath>
     </Reference>
+    <Reference Include="Infragistics4.Shared.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.Misc.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="MySql.Data, Version=6.3.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\ERDBManager.1.0.1\lib\MySql.Data.dll</HintPath>
     </Reference>
@@ -44,6 +47,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,6 +58,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select.Designer.cs">
+      <DependentUpon>select.cs</DependentUpon>
+    </Compile>
     <Compile Include="staff_list.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,7 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -113,6 +126,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="select.resx">
+      <DependentUpon>select.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="staff_list.resx">
       <DependentUpon>staff_list.cs</DependentUpon>
     </EmbeddedResource>

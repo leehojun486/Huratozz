@@ -16,6 +16,8 @@ namespace wujudaesselleagi
         public Item_form()
         {
             InitializeComponent();
+             // dgv_Search.rows[0].Cells[0] = DataGridViewButtonCell();
+
         }
 
         private void btn_select_click(object sender, EventArgs e)
@@ -78,6 +80,8 @@ namespace wujudaesselleagi
 
 
                         dgv_Search.DataSource = dsSearch.Tables[0];
+
+                      
 
 
                         //DataSet 내부의 테이블 이름

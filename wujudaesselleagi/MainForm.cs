@@ -14,13 +14,14 @@ namespace wujudaesselleagi
 {
     public partial class MainForm : Form
     {
-        public static Dictionary<string, int> DICT_REMOVE_INDEX = new Dictionary<string, int>();
-        private Draw.Point _imageLocation = new Draw.Point(15, 5);
-        private Draw.Point _imgHitArea = new Draw.Point(13, 2);
+        public static Dictionary<string, int> DICT_REMOVE_INDEX = new Dictionary<string, int>(); // DICT_REMOVE_INDEX Dictionary 에 키,페이지번호 저장
+        // 닫기버튼 이미지 위치
+        private Draw.Point _imageLocation = new Draw.Point(15, 5); 
+        private Draw.Point _imgHitArea = new Draw.Point(13, 2);  
         public MainForm()
         {
             InitializeComponent();
-            this.tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;  // Tab컨트롤 상속
             this.tabControl1.ItemSize = new Draw.Size(100, 20);
             this.tabControl1.SizeMode = TabSizeMode.Fixed;
 
@@ -55,23 +56,25 @@ namespace wujudaesselleagi
          } */
 
 
+        // TreeView 노드 더블클릭 이벤트
         private void double_click(object sender, TreeNodeMouseClickEventArgs e)
           {
          
 
              
-              if (e.Node.Name.Contains("Item_list"))
+              if (e.Node.Name.Contains("Item_list"))  // item_list 노드를 클릭했을 경우
               {
-                if (!DICT_REMOVE_INDEX.ContainsKey(e.Node.Text))
+                if (!DICT_REMOVE_INDEX.ContainsKey(e.Node.Text))  // 딕셔너리 key에 node.text 가 없다면
                 {
-                    Item_form item = new Item_form();
-                    item.TopLevel = false;
+                    Item_form item = new Item_form();   //item폼 객체생성
+                    item.TopLevel = false;  // 다른컨트롤에 폼포함 가능
                     
-                    tabControl1.TabPages.Add(e.Node.Text);
-                    tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(item);
+                    tabControl1.TabPages.Add(e.Node.Text);  // node.text 이름의 페이지 추가
+                    tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(item);  // tabpgde 에 item 폼 출력
                     tabControl1.SelectedIndex = tabControl1.TabPages.Count - 1;
                     tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(item);
 
+                    // 딕셔너리 에 노드 text, 컨트롤 인덱스 저장
                     DICT_REMOVE_INDEX.Add(e.Node.Text, tabControl1.SelectedIndex);
 
                     item.Dock = DockStyle.Fill;
@@ -183,7 +186,7 @@ namespace wujudaesselleagi
                   }
 
               } */
-            if (e.Node.Text.Contains("발주"))
+            if (e.Node.Name.Contains("Bar_list"))
             {
 
                 if (!DICT_REMOVE_INDEX.ContainsKey(e.Node.Text))
@@ -214,7 +217,7 @@ namespace wujudaesselleagi
             }
 
         }
-        private void DeleteTabpage(string temp)
+        private void DeleteTabpage(string temp)  //탭삭제시 텝 Dicnary 삭제 
         {
             int aint = 0;
             for (int i = 0; i < tabControl1.TabPages.Count; i++)
@@ -247,7 +250,7 @@ namespace wujudaesselleagi
         int tabindex = 0;
 
 
-        private void DrawItem_eve(object sender, DrawItemEventArgs e)
+        private void DrawItem_eve(object sender, DrawItemEventArgs e)  // 
       /*  {
                e.Graphics.DrawString("x", e.Font, Brushes.Black, e.Bounds.Right - 15, e.Bounds.Top + 4);
                e.Graphics.DrawString(this.tabControl1.TabPages[e.Index].Text, e.Font, Brushes.Black, e.Bounds.Left + 12, e.Bounds.Top + 4);
