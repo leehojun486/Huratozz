@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="Infragistics4.Shared.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.Misc.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="MySql.Data, Version=6.3.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\ERDBManager.1.0.1\lib\MySql.Data.dll</HintPath>
@@ -88,6 +89,12 @@
     <Compile Include="select.Designer.cs">
       <DependentUpon>select.cs</DependentUpon>
     </Compile>
+    <Compile Include="select2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select2.Designer.cs">
+      <DependentUpon>select2.cs</DependentUpon>
+    </Compile>
     <Compile Include="staff_list.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="select.resx">
       <DependentUpon>select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="select2.resx">
+      <DependentUpon>select2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="staff_list.resx">
       <DependentUpon>staff_list.cs</DependentUpon>

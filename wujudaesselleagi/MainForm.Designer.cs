@@ -52,8 +52,7 @@ namespace wujudaesselleagi
             this.treeView1.BackColor = System.Drawing.Color.Maroon;
             this.treeView1.ForeColor = System.Drawing.SystemColors.Window;
             this.treeView1.ItemHeight = 20;
-            this.treeView1.Location = new System.Drawing.Point(1, 196);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(4);
+            this.treeView1.Location = new System.Drawing.Point(1, 131);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "Item_list";
             treeNode1.Text = "품목";
@@ -72,7 +71,7 @@ namespace wujudaesselleagi
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode4,
             treeNode7});
-            this.treeView1.Size = new System.Drawing.Size(284, 1146);
+            this.treeView1.Size = new System.Drawing.Size(200, 999);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.double_click);
             // 
@@ -82,19 +81,19 @@ namespace wujudaesselleagi
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(1, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 198);
+            this.panel1.Size = new System.Drawing.Size(200, 132);
             this.panel1.TabIndex = 3;
             // 
             // tabControl1
             // 
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.Location = new System.Drawing.Point(286, 0);
+            this.tabControl1.Location = new System.Drawing.Point(200, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1838, 1342);
+            this.tabControl1.Size = new System.Drawing.Size(1607, 1069);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 5;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.DrawItem_eve);
@@ -102,17 +101,17 @@ namespace wujudaesselleagi
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2124, 1343);
+            this.ClientSize = new System.Drawing.Size(1807, 1061);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.treeView1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(286, 0, 0, 0);
+            this.Padding = new System.Windows.Forms.Padding(200, 0, 0, 0);
             this.Text = "후라토식당.ver1.0";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

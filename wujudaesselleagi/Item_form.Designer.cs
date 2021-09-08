@@ -93,9 +93,9 @@ namespace wujudaesselleagi
             this.panel1.Controls.Add(this.Add_item);
             this.panel1.Controls.Add(this.select_litem);
             this.panel1.Controls.Add(this.Delete_item);
-            this.panel1.Location = new System.Drawing.Point(255, 3);
+            this.panel1.Location = new System.Drawing.Point(245, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1014, 39);
+            this.panel1.Size = new System.Drawing.Size(10009, 131);
             this.panel1.TabIndex = 5;
             // 
             // Save_item
@@ -141,7 +141,7 @@ namespace wujudaesselleagi
             this.dgv_Search.Name = "dgv_Search";
             this.dgv_Search.RowHeadersWidth = 123;
             this.dgv_Search.RowTemplate.Height = 23;
-            this.dgv_Search.Size = new System.Drawing.Size(1267, 619);
+            this.dgv_Search.Size = new System.Drawing.Size(4164, 696);
             this.dgv_Search.TabIndex = 6;
             // 
             // item_cd1
@@ -213,7 +213,7 @@ namespace wujudaesselleagi
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1272, 733);
+            this.ClientSize = new System.Drawing.Size(3860, 1100);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.dgv_Search);

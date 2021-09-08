@@ -18,17 +18,20 @@ namespace wujudaesselleagi
         // 닫기버튼 이미지 위치
         private Draw.Point _imageLocation = new Draw.Point(15, 5); 
         private Draw.Point _imgHitArea = new Draw.Point(13, 2);  
+
         public MainForm()
         {
             InitializeComponent();
-            this.tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;  // Tab컨트롤 상속
+                        this.tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;  // Tab컨트롤 상속
             this.tabControl1.ItemSize = new Draw.Size(100, 20);
             this.tabControl1.SizeMode = TabSizeMode.Fixed;
 
             // Add the Handler to draw the Image on Tab Pages
             tabControl1.DrawItem += DrawItem_eve;
 
+
         }
+
         /* private Form ShowOrActiveForm(Form form, Type t)
          {
              if (form == null)

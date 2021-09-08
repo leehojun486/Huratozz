@@ -37,12 +37,12 @@ namespace wujudaesselleagi
             this.select_litem = new System.Windows.Forms.Button();
             this.Delete_item = new System.Windows.Forms.Button();
             this.Update_item = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.dgv_Search = new System.Windows.Forms.DataGridView();
             this.tj_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tj_nm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tj_leader = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tj_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@ namespace wujudaesselleagi
             this.panel1.Controls.Add(this.Update_item);
             this.panel1.Location = new System.Drawing.Point(250, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1224, 131);
+            this.panel1.Size = new System.Drawing.Size(9999, 131);
             this.panel1.TabIndex = 36;
             // 
             // Save_item
@@ -131,16 +131,6 @@ namespace wujudaesselleagi
             this.Update_item.UseVisualStyleBackColor = false;
             this.Update_item.Click += new System.EventHandler(this.btn_update_click);
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel9.Location = new System.Drawing.Point(-3, 12);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(247, 131);
-            this.panel9.TabIndex = 38;
-            // 
             // dgv_Search
             // 
             this.dgv_Search.AllowUserToAddRows = false;
@@ -160,7 +150,7 @@ namespace wujudaesselleagi
             this.dgv_Search.Name = "dgv_Search";
             this.dgv_Search.RowHeadersWidth = 123;
             this.dgv_Search.RowTemplate.Height = 23;
-            this.dgv_Search.Size = new System.Drawing.Size(1477, 746);
+            this.dgv_Search.Size = new System.Drawing.Size(1461, 682);
             this.dgv_Search.TabIndex = 37;
             // 
             // tj_cd
@@ -190,6 +180,16 @@ namespace wujudaesselleagi
             this.tj_address.HeaderText = "주소";
             this.tj_address.MinimumWidth = 8;
             this.tj_address.Name = "tj_address";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel9.Location = new System.Drawing.Point(-3, 12);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(247, 131);
+            this.panel9.TabIndex = 38;
             // 
             // TJ_Form
             // 

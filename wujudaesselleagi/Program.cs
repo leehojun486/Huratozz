@@ -14,9 +14,14 @@ namespace wujudaesselleagi
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            MainForm mains = new MainForm();
+            Application.Run(mains);
+                
+           
         }
     }
 }

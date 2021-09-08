@@ -146,7 +146,7 @@ namespace wujudaesselleagi
             this.dgv_Search.Name = "dgv_Search";
             this.dgv_Search.RowHeadersWidth = 123;
             this.dgv_Search.RowTemplate.Height = 23;
-            this.dgv_Search.Size = new System.Drawing.Size(1477, 746);
+            this.dgv_Search.Size = new System.Drawing.Size(1382, 746);
             this.dgv_Search.TabIndex = 34;
             // 
             // staff_cd
@@ -182,7 +182,7 @@ namespace wujudaesselleagi
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1480, 733);
+            this.ClientSize = new System.Drawing.Size(1385, 733);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.dgv_Search);

@@ -31,9 +31,12 @@ namespace wujudaesselleagi
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(valju));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(valju));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Save_item = new System.Windows.Forms.Button();
             this.Save_button = new System.Windows.Forms.Button();
@@ -41,18 +44,20 @@ namespace wujudaesselleagi
             this.select_litem = new System.Windows.Forms.Button();
             this.Delete_item = new System.Windows.Forms.Button();
             this.dgv_Search = new System.Windows.Forms.DataGridView();
+            this.dgv_Search2 = new System.Windows.Forms.DataGridView();
+            this.order_sno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.item_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Select_item = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.item_nm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ol_cnt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ol_price_cnt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ol_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.order_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tjcd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select_bt = new System.Windows.Forms.DataGridViewButtonColumn();
             this.order_tj_nm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.dgv_Search2 = new System.Windows.Forms.DataGridView();
-            this.item_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.item_nm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ol_cnt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ol_price_cnt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ol_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search2)).BeginInit();
@@ -68,7 +73,7 @@ namespace wujudaesselleagi
             this.panel1.Controls.Add(this.Delete_item);
             this.panel1.Location = new System.Drawing.Point(255, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1231, 131);
+            this.panel1.Size = new System.Drawing.Size(9999, 131);
             this.panel1.TabIndex = 33;
             // 
             // Save_item
@@ -127,6 +132,7 @@ namespace wujudaesselleagi
             this.Delete_item.TabIndex = 3;
             this.Delete_item.Text = "삭제";
             this.Delete_item.UseVisualStyleBackColor = false;
+            this.Delete_item.Click += new System.EventHandler(this.btn_delete_eve);
             // 
             // dgv_Search
             // 
@@ -148,10 +154,121 @@ namespace wujudaesselleagi
             this.dgv_Search.Name = "dgv_Search";
             this.dgv_Search.RowHeadersWidth = 123;
             this.dgv_Search.RowTemplate.Height = 23;
-            this.dgv_Search.Size = new System.Drawing.Size(1493, 293);
+            this.dgv_Search.Size = new System.Drawing.Size(1391, 293);
             this.dgv_Search.TabIndex = 35;
             this.dgv_Search.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Click_data_catch);
             this.dgv_Search.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvHelloWorld_CellContentClick);
+            this.dgv_Search.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.select_dgv1);
+            // 
+            // dgv_Search2
+            // 
+            this.dgv_Search2.AllowUserToOrderColumns = true;
+            this.dgv_Search2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_Search2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Search2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dgv_Search2.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Search2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Search2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.order_sno,
+            this.item_cd,
+            this.Select_item,
+            this.item_nm,
+            this.ol_cnt,
+            this.ol_price_cnt,
+            this.ol_price});
+            this.dgv_Search2.Location = new System.Drawing.Point(2, 436);
+            this.dgv_Search2.Name = "dgv_Search2";
+            this.dgv_Search2.RowHeadersWidth = 123;
+            this.dgv_Search2.RowTemplate.Height = 23;
+            this.dgv_Search2.Size = new System.Drawing.Size(1391, 541);
+            this.dgv_Search2.TabIndex = 36;
+            this.dgv_Search2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_select_form);
+            // 
+            // order_sno
+            // 
+            this.order_sno.DataPropertyName = "order_sno";
+            this.order_sno.FillWeight = 10F;
+            this.order_sno.HeaderText = "순번";
+            this.order_sno.Name = "order_sno";
+            // 
+            // item_cd
+            // 
+            this.item_cd.DataPropertyName = "item_cd";
+            this.item_cd.FillWeight = 40.19687F;
+            this.item_cd.HeaderText = "품목코드";
+            this.item_cd.MinimumWidth = 8;
+            this.item_cd.Name = "item_cd";
+            this.item_cd.ReadOnly = true;
+            // 
+            // Select_item
+            // 
+            this.Select_item.FillWeight = 10F;
+            this.Select_item.HeaderText = "검색";
+            this.Select_item.Name = "Select_item";
+            this.Select_item.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Select_item.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Select_item.Text = "검색";
+            // 
+            // item_nm
+            // 
+            this.item_nm.DataPropertyName = "item_nm";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.item_nm.DefaultCellStyle = dataGridViewCellStyle2;
+            this.item_nm.FillWeight = 40.19687F;
+            this.item_nm.HeaderText = "품목이름";
+            this.item_nm.MinimumWidth = 8;
+            this.item_nm.Name = "item_nm";
+            this.item_nm.ReadOnly = true;
+            // 
+            // ol_cnt
+            // 
+            this.ol_cnt.DataPropertyName = "ol_cnt";
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.ol_cnt.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ol_cnt.FillWeight = 40.19687F;
+            this.ol_cnt.HeaderText = "주문갯수";
+            this.ol_cnt.MinimumWidth = 8;
+            this.ol_cnt.Name = "ol_cnt";
+            this.ol_cnt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ol_price_cnt
+            // 
+            this.ol_price_cnt.DataPropertyName = "ol_price_cnt";
+            dataGridViewCellStyle4.Format = "C0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ol_price_cnt.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ol_price_cnt.FillWeight = 30F;
+            this.ol_price_cnt.HeaderText = "단가";
+            this.ol_price_cnt.MinimumWidth = 10;
+            this.ol_price_cnt.Name = "ol_price_cnt";
+            this.ol_price_cnt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ol_price
+            // 
+            this.ol_price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ol_price.DataPropertyName = "ol_price";
+            dataGridViewCellStyle5.Format = "C0";
+            dataGridViewCellStyle5.NullValue = null;
+            this.ol_price.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ol_price.FillWeight = 70F;
+            this.ol_price.HeaderText = "주문금액";
+            this.ol_price.MinimumWidth = 8;
+            this.ol_price.Name = "ol_price";
+            this.ol_price.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ol_price.Width = 150;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel9.Location = new System.Drawing.Point(2, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(247, 131);
+            this.panel9.TabIndex = 34;
             // 
             // order_no
             // 
@@ -164,13 +281,14 @@ namespace wujudaesselleagi
             // order_date
             // 
             this.order_date.DataPropertyName = "order_date";
-            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.Format = "D";
             dataGridViewCellStyle1.NullValue = null;
             this.order_date.DefaultCellStyle = dataGridViewCellStyle1;
             this.order_date.FillWeight = 81.34752F;
             this.order_date.HeaderText = "발주날짜";
             this.order_date.MinimumWidth = 8;
             this.order_date.Name = "order_date";
+            this.order_date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // tjcd
             // 
@@ -202,91 +320,12 @@ namespace wujudaesselleagi
             this.order_tj_nm.ReadOnly = true;
             this.order_tj_nm.Width = 150;
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel9.Location = new System.Drawing.Point(2, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(247, 131);
-            this.panel9.TabIndex = 34;
-            // 
-            // dgv_Search2
-            // 
-            this.dgv_Search2.AllowUserToAddRows = false;
-            this.dgv_Search2.AllowUserToOrderColumns = true;
-            this.dgv_Search2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_Search2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Search2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            this.dgv_Search2.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_Search2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Search2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.item_cd,
-            this.item_nm,
-            this.ol_cnt,
-            this.ol_price_cnt,
-            this.ol_price});
-            this.dgv_Search2.Location = new System.Drawing.Point(-7, 436);
-            this.dgv_Search2.Name = "dgv_Search2";
-            this.dgv_Search2.RowHeadersWidth = 123;
-            this.dgv_Search2.RowTemplate.Height = 23;
-            this.dgv_Search2.Size = new System.Drawing.Size(1493, 285);
-            this.dgv_Search2.TabIndex = 36;
-            // 
-            // item_cd
-            // 
-            this.item_cd.DataPropertyName = "item_cd";
-            this.item_cd.FillWeight = 81.34752F;
-            this.item_cd.HeaderText = "품목코드";
-            this.item_cd.MinimumWidth = 8;
-            this.item_cd.Name = "item_cd";
-            // 
-            // item_nm
-            // 
-            this.item_nm.DataPropertyName = "item_nm";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.item_nm.DefaultCellStyle = dataGridViewCellStyle2;
-            this.item_nm.FillWeight = 81.34752F;
-            this.item_nm.HeaderText = "품목이름";
-            this.item_nm.MinimumWidth = 8;
-            this.item_nm.Name = "item_nm";
-            // 
-            // ol_cnt
-            // 
-            this.ol_cnt.DataPropertyName = "ol_cnt";
-            this.ol_cnt.FillWeight = 81.34752F;
-            this.ol_cnt.HeaderText = "주문갯수";
-            this.ol_cnt.MinimumWidth = 8;
-            this.ol_cnt.Name = "ol_cnt";
-            this.ol_cnt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ol_price_cnt
-            // 
-            this.ol_price_cnt.DataPropertyName = "ol_price_cnt";
-            this.ol_price_cnt.FillWeight = 10F;
-            this.ol_price_cnt.HeaderText = "단가";
-            this.ol_price_cnt.MinimumWidth = 10;
-            this.ol_price_cnt.Name = "ol_price_cnt";
-            this.ol_price_cnt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ol_price
-            // 
-            this.ol_price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ol_price.DataPropertyName = "ol_price";
-            this.ol_price.HeaderText = "주문금액";
-            this.ol_price.MinimumWidth = 8;
-            this.ol_price.Name = "ol_price";
-            this.ol_price.Width = 150;
-            // 
             // valju
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1487, 733);
+            this.ClientSize = new System.Drawing.Size(1385, 740);
             this.Controls.Add(this.dgv_Search2);
             this.Controls.Add(this.dgv_Search);
             this.Controls.Add(this.panel1);
@@ -311,16 +350,18 @@ namespace wujudaesselleagi
         private System.Windows.Forms.Button Delete_item;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.DataGridView dgv_Search;
+        private DataGridView dgv_Search2;
+        private DataGridViewTextBoxColumn order_sno;
+        private DataGridViewTextBoxColumn item_cd;
+        private DataGridViewButtonColumn Select_item;
+        private DataGridViewTextBoxColumn item_nm;
+        private DataGridViewTextBoxColumn ol_cnt;
+        private DataGridViewTextBoxColumn ol_price_cnt;
+        private DataGridViewTextBoxColumn ol_price;
         private DataGridViewTextBoxColumn order_no;
         private DataGridViewTextBoxColumn order_date;
         private DataGridViewTextBoxColumn tjcd;
         private DataGridViewButtonColumn select_bt;
         private DataGridViewTextBoxColumn order_tj_nm;
-        private DataGridView dgv_Search2;
-        private DataGridViewTextBoxColumn item_cd;
-        private DataGridViewTextBoxColumn item_nm;
-        private DataGridViewTextBoxColumn ol_cnt;
-        private DataGridViewTextBoxColumn ol_price_cnt;
-        private DataGridViewTextBoxColumn ol_price;
     }
 }
