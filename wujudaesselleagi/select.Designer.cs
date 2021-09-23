@@ -64,6 +64,7 @@ namespace wujudaesselleagi
             this.dgv_Search.Size = new System.Drawing.Size(443, 413);
             this.dgv_Search.TabIndex = 1;
             this.dgv_Search.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_search_RowEnters);
+            this.dgv_Search.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.barogo);
             // 
             // tj_cd
             // 

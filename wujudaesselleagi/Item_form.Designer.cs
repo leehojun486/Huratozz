@@ -30,20 +30,27 @@ namespace wujudaesselleagi
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Item_form));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.select_litem = new System.Windows.Forms.Button();
             this.Delete_item = new System.Windows.Forms.Button();
             this.Add_item = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.Save_item = new System.Windows.Forms.Button();
             this.Save_button = new System.Windows.Forms.Button();
             this.dgv_Search = new System.Windows.Forms.DataGridView();
             this.item_cd1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.item_nm1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.item_cf1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.item_og1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.item_cf1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.item_og1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.item_sales1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.item_use1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.item_use1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +60,7 @@ namespace wujudaesselleagi
             this.select_litem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.select_litem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.select_litem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.select_litem.Location = new System.Drawing.Point(10, 9);
+            this.select_litem.Location = new System.Drawing.Point(252, 3);
             this.select_litem.Name = "select_litem";
             this.select_litem.Size = new System.Drawing.Size(75, 23);
             this.select_litem.TabIndex = 0;
@@ -65,7 +72,7 @@ namespace wujudaesselleagi
             // 
             this.Delete_item.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Delete_item.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Delete_item.Location = new System.Drawing.Point(172, 9);
+            this.Delete_item.Location = new System.Drawing.Point(414, 3);
             this.Delete_item.Name = "Delete_item";
             this.Delete_item.Size = new System.Drawing.Size(75, 23);
             this.Delete_item.TabIndex = 3;
@@ -77,7 +84,7 @@ namespace wujudaesselleagi
             // 
             this.Add_item.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Add_item.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Add_item.Location = new System.Drawing.Point(253, 9);
+            this.Add_item.Location = new System.Drawing.Point(495, 3);
             this.Add_item.Name = "Add_item";
             this.Add_item.Size = new System.Drawing.Size(75, 23);
             this.Add_item.TabIndex = 4;
@@ -88,21 +95,33 @@ namespace wujudaesselleagi
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.Save_item);
             this.panel1.Controls.Add(this.Save_button);
             this.panel1.Controls.Add(this.Add_item);
             this.panel1.Controls.Add(this.select_litem);
             this.panel1.Controls.Add(this.Delete_item);
-            this.panel1.Location = new System.Drawing.Point(245, 3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10009, 131);
+            this.panel1.Size = new System.Drawing.Size(3860, 131);
             this.panel1.TabIndex = 5;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel9.Location = new System.Drawing.Point(-9, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(259, 131);
+            this.panel9.TabIndex = 32;
             // 
             // Save_item
             // 
             this.Save_item.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Save_item.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Save_item.Location = new System.Drawing.Point(91, 9);
+            this.Save_item.Location = new System.Drawing.Point(333, 3);
             this.Save_item.Name = "Save_item";
             this.Save_item.Size = new System.Drawing.Size(75, 23);
             this.Save_item.TabIndex = 6;
@@ -124,11 +143,18 @@ namespace wujudaesselleagi
             // 
             this.dgv_Search.AllowUserToAddRows = false;
             this.dgv_Search.AllowUserToOrderColumns = true;
-            this.dgv_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_Search.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔바른펜", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgv_Search.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Search.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dgv_Search.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔바른펜", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Search.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Search.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.item_cd1,
@@ -137,11 +163,22 @@ namespace wujudaesselleagi
             this.item_og1,
             this.item_sales1,
             this.item_use1});
-            this.dgv_Search.Location = new System.Drawing.Point(2, 140);
+            this.dgv_Search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Search.EnableHeadersVisualStyles = false;
+            this.dgv_Search.Location = new System.Drawing.Point(0, 131);
             this.dgv_Search.Name = "dgv_Search";
-            this.dgv_Search.RowHeadersWidth = 123;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Search.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_Search.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgv_Search.RowTemplate.Height = 23;
-            this.dgv_Search.Size = new System.Drawing.Size(4164, 696);
+            this.dgv_Search.Size = new System.Drawing.Size(3860, 969);
             this.dgv_Search.TabIndex = 6;
             // 
             // item_cd1
@@ -166,24 +203,36 @@ namespace wujudaesselleagi
             // 
             this.item_cf1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.item_cf1.DataPropertyName = "item_cf1";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.item_cf1.DefaultCellStyle = dataGridViewCellStyle3;
             this.item_cf1.FillWeight = 30F;
             this.item_cf1.HeaderText = "품목구분";
             this.item_cf1.MinimumWidth = 15;
             this.item_cf1.Name = "item_cf1";
+            this.item_cf1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.item_cf1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // item_og1
             // 
             this.item_og1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.item_og1.DataPropertyName = "item_og1";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.item_og1.DefaultCellStyle = dataGridViewCellStyle4;
             this.item_og1.FillWeight = 30F;
             this.item_og1.HeaderText = "원산지";
             this.item_og1.MinimumWidth = 15;
             this.item_og1.Name = "item_og1";
+            this.item_og1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.item_og1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // item_sales1
             // 
             this.item_sales1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.item_sales1.DataPropertyName = "item_sales1";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C0";
+            dataGridViewCellStyle5.NullValue = null;
+            this.item_sales1.DefaultCellStyle = dataGridViewCellStyle5;
             this.item_sales1.FillWeight = 30F;
             this.item_sales1.HeaderText = "가격";
             this.item_sales1.MinimumWidth = 15;
@@ -193,20 +242,14 @@ namespace wujudaesselleagi
             // 
             this.item_use1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.item_use1.DataPropertyName = "item_use1";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.item_use1.DefaultCellStyle = dataGridViewCellStyle6;
             this.item_use1.FillWeight = 30F;
             this.item_use1.HeaderText = "사용여부";
             this.item_use1.MinimumWidth = 15;
             this.item_use1.Name = "item_use1";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel9.Location = new System.Drawing.Point(2, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(247, 131);
-            this.panel9.TabIndex = 32;
+            this.item_use1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.item_use1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Item_form
             // 
@@ -214,12 +257,10 @@ namespace wujudaesselleagi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(3860, 1100);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel9);
             this.Controls.Add(this.dgv_Search);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Item_form";
-            this.Padding = new System.Windows.Forms.Padding(200, 0, 0, 0);
             this.Text = "품목";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).EndInit();
@@ -236,12 +277,12 @@ namespace wujudaesselleagi
         private System.Windows.Forms.DataGridView dgv_Search;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button Save_button;
+        private System.Windows.Forms.Button Save_item;
         private System.Windows.Forms.DataGridViewTextBoxColumn item_cd1;
         private System.Windows.Forms.DataGridViewTextBoxColumn item_nm1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn item_cf1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn item_og1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn item_cf1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn item_og1;
         private System.Windows.Forms.DataGridViewTextBoxColumn item_sales1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn item_use1;
-        private System.Windows.Forms.Button Save_item;
+        private System.Windows.Forms.DataGridViewComboBoxColumn item_use1;
     }
 }

@@ -16,9 +16,15 @@ namespace wujudaesselleagi
         public Item_form()
         {
             InitializeComponent();
-             // dgv_Search.rows[0].Cells[0] = DataGridViewButtonCell();
+            // dgv_Search.rows[0].Cells[0] = DataGridViewButtonCell();
+            Application.Idle += LoadEven_use;
+            // dgv_Search.rows[0].Cells[0] = DataGridViewButtonCell();
+            Application.Idle += LoadEven_cf;
+            Application.Idle += LoadEven_og;
+            
 
         }
+        string mj_code;
 
         private void btn_select_click(object sender, EventArgs e)
         {
@@ -60,7 +66,7 @@ namespace wujudaesselleagi
 
                         //저장프로시저명
 
-                        Command.CommandText = "dbo.item_list_S1";
+                        Command.CommandText = "dbo.USP_item_list_S1";
 
                         Command.Parameters.AddWithValue("@item_cd", "") ;
 
@@ -131,7 +137,7 @@ namespace wujudaesselleagi
 
                     //저장프로시저명
 
-                    Command.CommandText = "dbo.item_list_S1";
+                    Command.CommandText = "dbo.USP_item_list_S1";
 
                     Command.Parameters.AddWithValue("@item_cd", "");
 
@@ -445,7 +451,7 @@ namespace wujudaesselleagi
        
         private void CSV_SAVE_click(object sender, EventArgs e)
         {
-            StreamWriter writer = new StreamWriter(@"C:\Users\aeter\Desktop\Wording\새 폴더\test.csv", false, Encoding.GetEncoding("UTF-8"));
+            StreamWriter writer = new StreamWriter(@"C:\Users\aeter\Desktop\Wording\새폴더\test.csv", false, Encoding.GetEncoding("UTF-8"));
 
             for(int i =0; i < dgv_Search.Columns.Count; i ++)
             {
@@ -490,6 +496,111 @@ namespace wujudaesselleagi
         {
             dgv_Search.AllowUserToAddRows = true;
             dgv_Search.Columns["item_cd1"].ReadOnly = false;
-        } 
+        }
+
+        private void LoadEven_use(object sender,EventArgs e)
+        {
+            
+            SqlConnection DBconn = new SqlConnection("Server = DESKTOP-CPJQVAP\\LEEHJ; database = Hurato; uid =sa; pwd = 1234 ");
+            DBconn.Open();
+            SqlCommand comand = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+
+            da.TableMappings.Add("Table", "minor_cms");
+
+            comand.Connection = DBconn;
+
+            comand.CommandType = CommandType.StoredProcedure;
+
+            comand.CommandText = "dbo.usp_codemaster_S2";
+            comand.Parameters.AddWithValue("@major_cd", "AD1");
+
+            da.SelectCommand = comand;
+
+            da.SelectCommand.ExecuteNonQuery();
+
+            da.Fill(ds);
+
+            item_use1.DataSource = ds.DefaultViewManager;
+
+            item_use1.DisplayMember = "minor_cms.minor_nm";
+
+            item_use1.ValueMember = "minor_cms.minor_cd";
+
+            DBconn.Close();
+        }
+
+        private void LoadEven_cf(object sender, EventArgs e)
+        {
+
+            SqlConnection DBconn = new SqlConnection("Server = DESKTOP-CPJQVAP\\LEEHJ; database = Hurato; uid =sa; pwd = 1234 ");
+            DBconn.Open();
+            SqlCommand comand = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+
+            da.TableMappings.Add("Table", "minor_cms");
+
+            comand.Connection = DBconn;
+
+            comand.CommandType = CommandType.StoredProcedure;
+
+            comand.CommandText = "dbo.usp_codemaster_S2";
+            comand.Parameters.AddWithValue("@major_cd", "AD2");
+
+            da.SelectCommand = comand;
+
+            da.SelectCommand.ExecuteNonQuery();
+
+            da.Fill(ds);
+
+            item_cf1.DataSource = ds.DefaultViewManager;
+
+            item_cf1.DisplayMember = "minor_cms.minor_nm";
+
+            item_cf1.ValueMember = "minor_cms.minor_cd";
+
+            DBconn.Close();
+        }
+
+        private void LoadEven_og(object sender, EventArgs e)
+        {
+
+            SqlConnection DBconn = new SqlConnection("Server = DESKTOP-CPJQVAP\\LEEHJ; database = Hurato; uid =sa; pwd = 1234 ");
+            DBconn.Open();
+            SqlCommand comand = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+
+            da.TableMappings.Add("Table", "minor_cms");
+
+            comand.Connection = DBconn;
+
+            comand.CommandType = CommandType.StoredProcedure;
+
+            comand.CommandText = "dbo.usp_codemaster_S2";
+            comand.Parameters.AddWithValue("@major_cd", "AD3");
+
+            da.SelectCommand = comand;
+
+            da.SelectCommand.ExecuteNonQuery();
+
+            da.Fill(ds);
+
+            item_og1.DataSource = ds.DefaultViewManager;
+
+            item_og1.DisplayMember = "minor_cms.minor_nm";
+
+            item_og1.ValueMember = "minor_cms.minor_cd";
+
+
+
+            
+
+            DBconn.Close();
+        }
+
+
     }
 }

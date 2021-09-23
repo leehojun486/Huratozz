@@ -64,7 +64,7 @@ namespace wujudaesselleagi
 
                     //저장프로시저명
 
-                    Command.CommandText = "dbo.item_list_S1";
+                    Command.CommandText = "dbo.USP_item_list_S1";
 
                     Command.Parameters.AddWithValue("@item_cd", "");
 
@@ -87,10 +87,6 @@ namespace wujudaesselleagi
 
 
                     //DataSet 내부의 테이블 이름
-
-
-
-                    MessageBox.Show("데이터가 조회됐습니다.", "Information");
 
 
 
@@ -127,10 +123,13 @@ namespace wujudaesselleagi
             TB2.Text = dgv_Search.Rows[e.RowIndex].Cells["item_nm1"].Value.ToString();  // 선택한 셀의 name 을 TB2에 저장
         }
 
-
-
-
-
-
+        private void barogo(object sender, DataGridViewCellEventArgs e)
+        {
+            TB.Text = dgv_Search.Rows[e.RowIndex].Cells["item_cd1"].Value.ToString();   //선택한 셀의 cide 를 TB에저장
+            TB2.Text = dgv_Search.Rows[e.RowIndex].Cells["item_nm1"].Value.ToString();  // 선택한 셀의 name 을 TB2에 저장
+            Passvalue = TB.Text;   //Form2로 데이터를 보냄
+            Passvalue2 = TB2.Text;  //Form2로 데이터를 보냄
+            this.Hide();          // 검색폼 닫기
+        }
     }
 }

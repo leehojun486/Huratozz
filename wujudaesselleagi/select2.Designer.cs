@@ -32,13 +32,13 @@ namespace wujudaesselleagi
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgv_Search = new System.Windows.Forms.DataGridView();
-            this.label = new Infragistics.Win.Misc.UltraLabel();
             this.item_cd1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.item_nm1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.item_cf1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.item_og1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.item_sales1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.item_use1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label = new Infragistics.Win.Misc.UltraLabel();
             this.TB = new System.Windows.Forms.TextBox();
             this.TB2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Search)).BeginInit();
@@ -77,10 +77,54 @@ namespace wujudaesselleagi
             this.item_use1});
             this.dgv_Search.Location = new System.Drawing.Point(1, 46);
             this.dgv_Search.Name = "dgv_Search";
+            this.dgv_Search.RowHeadersWidth = 123;
             this.dgv_Search.RowTemplate.Height = 23;
             this.dgv_Search.Size = new System.Drawing.Size(513, 422);
             this.dgv_Search.TabIndex = 5;
-            this.dgv_Search.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_search_RowEnters);
+            this.dgv_Search.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_search_RowEnters);
+            this.dgv_Search.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.barogo);
+            // 
+            // item_cd1
+            // 
+            this.item_cd1.DataPropertyName = "item_cd1";
+            this.item_cd1.HeaderText = "폼목코드";
+            this.item_cd1.MinimumWidth = 15;
+            this.item_cd1.Name = "item_cd1";
+            // 
+            // item_nm1
+            // 
+            this.item_nm1.DataPropertyName = "item_nm1";
+            this.item_nm1.HeaderText = "품목명";
+            this.item_nm1.MinimumWidth = 15;
+            this.item_nm1.Name = "item_nm1";
+            // 
+            // item_cf1
+            // 
+            this.item_cf1.DataPropertyName = "item_cf1";
+            this.item_cf1.HeaderText = "품목구분";
+            this.item_cf1.MinimumWidth = 15;
+            this.item_cf1.Name = "item_cf1";
+            // 
+            // item_og1
+            // 
+            this.item_og1.DataPropertyName = "item_og1";
+            this.item_og1.HeaderText = "원산지";
+            this.item_og1.MinimumWidth = 15;
+            this.item_og1.Name = "item_og1";
+            // 
+            // item_sales1
+            // 
+            this.item_sales1.DataPropertyName = "item_sales1";
+            this.item_sales1.HeaderText = "가격";
+            this.item_sales1.MinimumWidth = 15;
+            this.item_sales1.Name = "item_sales1";
+            // 
+            // item_use1
+            // 
+            this.item_use1.DataPropertyName = "item_use1";
+            this.item_use1.HeaderText = "사용여부";
+            this.item_use1.MinimumWidth = 15;
+            this.item_use1.Name = "item_use1";
             // 
             // label
             // 
@@ -89,42 +133,6 @@ namespace wujudaesselleagi
             this.label.Size = new System.Drawing.Size(100, 33);
             this.label.TabIndex = 4;
             this.label.Text = "품목검색";
-            // 
-            // item_cd1
-            // 
-            this.item_cd1.DataPropertyName = "item_cd1";
-            this.item_cd1.HeaderText = "폼목코드";
-            this.item_cd1.Name = "item_cd1";
-            // 
-            // item_nm1
-            // 
-            this.item_nm1.DataPropertyName = "item_nm1";
-            this.item_nm1.HeaderText = "품목명";
-            this.item_nm1.Name = "item_nm1";
-            // 
-            // item_cf1
-            // 
-            this.item_cf1.DataPropertyName = "item_cf1";
-            this.item_cf1.HeaderText = "품목구분";
-            this.item_cf1.Name = "item_cf1";
-            // 
-            // item_og1
-            // 
-            this.item_og1.DataPropertyName = "item_og1";
-            this.item_og1.HeaderText = "원산지";
-            this.item_og1.Name = "item_og1";
-            // 
-            // item_sales1
-            // 
-            this.item_sales1.DataPropertyName = "item_sales1";
-            this.item_sales1.HeaderText = "가격";
-            this.item_sales1.Name = "item_sales1";
-            // 
-            // item_use1
-            // 
-            this.item_use1.DataPropertyName = "item_use1";
-            this.item_use1.HeaderText = "사용여부";
-            this.item_use1.Name = "item_use1";
             // 
             // TB
             // 
@@ -144,7 +152,7 @@ namespace wujudaesselleagi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 551);
+            this.ClientSize = new System.Drawing.Size(519, 561);
             this.Controls.Add(this.TB2);
             this.Controls.Add(this.TB);
             this.Controls.Add(this.button2);

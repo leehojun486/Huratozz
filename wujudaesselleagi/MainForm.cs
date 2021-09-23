@@ -194,7 +194,7 @@ namespace wujudaesselleagi
 
                 if (!DICT_REMOVE_INDEX.ContainsKey(e.Node.Text))
                 {
-                    valju item = new valju();
+                    Class1 item = new Class1();
                     item.TopLevel = false;
 
                     tabControl1.TabPages.Add(e.Node.Text);
@@ -218,6 +218,71 @@ namespace wujudaesselleagi
 
 
             }
+
+            if (e.Node.Name.Contains("Bar_now_list"))
+            {
+
+                if (!DICT_REMOVE_INDEX.ContainsKey(e.Node.Text))
+                {
+                    valju_now item = new valju_now();
+                    item.TopLevel = false;
+
+                    tabControl1.TabPages.Add(e.Node.Text);
+                    tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(item);
+                    tabControl1.SelectedIndex = tabControl1.TabPages.Count - 1;
+                    tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(item);
+
+                    DICT_REMOVE_INDEX.Add(e.Node.Text, tabControl1.SelectedIndex);
+
+                    item.Dock = DockStyle.Fill;
+                    item.Show();
+
+
+
+                }
+                else
+                {
+
+                    tabControl1.SelectedTab = tabControl1.TabPages[DICT_REMOVE_INDEX[e.Node.Text]];
+                }
+
+
+            }
+
+            if (e.Node.Name.Contains("code_master"))
+            {
+
+                if (!DICT_REMOVE_INDEX.ContainsKey(e.Node.Text))
+                {
+                    CodeMaster item = new CodeMaster();
+                    item.TopLevel = false;
+
+                    tabControl1.TabPages.Add(e.Node.Text);
+                    tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(item);
+                    tabControl1.SelectedIndex = tabControl1.TabPages.Count - 1;
+                    tabControl1.TabPages[tabControl1.TabPages.Count - 1].Controls.Add(item);
+
+                    DICT_REMOVE_INDEX.Add(e.Node.Text, tabControl1.SelectedIndex);
+
+                    item.Dock = DockStyle.Fill;
+                    item.Show();
+
+
+
+                }
+                else
+                {
+
+                    tabControl1.SelectedTab = tabControl1.TabPages[DICT_REMOVE_INDEX[e.Node.Text]];
+                }
+
+
+            }
+
+
+
+
+
 
         }
         private void DeleteTabpage(string temp)  //탭삭제시 텝 Dicnary 삭제 

@@ -29,18 +29,20 @@ namespace wujudaesselleagi
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("품목");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("직원정보");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("거래처정보");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("기준정보", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("코드마스터");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("품목");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("직원정보");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("거래처정보");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("기준정보", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("발주");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Bar_now_list");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("영업관리", new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6});
+            treeNode3,
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("발주");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("발주현황");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("영업관리", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,23 +56,25 @@ namespace wujudaesselleagi
             this.treeView1.ItemHeight = 20;
             this.treeView1.Location = new System.Drawing.Point(1, 131);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Item_list";
-            treeNode1.Text = "품목";
-            treeNode2.Name = "User_list";
-            treeNode2.Text = "직원정보";
-            treeNode3.Name = "buy_list";
-            treeNode3.Text = "거래처정보";
-            treeNode4.Name = "Item";
-            treeNode4.Text = "기준정보";
-            treeNode5.Name = "Bar_list";
-            treeNode5.Text = "발주";
-            treeNode6.Name = "발주현황";
-            treeNode6.Text = "Bar_now_list";
-            treeNode7.Name = "sales";
-            treeNode7.Text = "영업관리";
+            treeNode1.Name = "code_master";
+            treeNode1.Text = "코드마스터";
+            treeNode2.Name = "Item_list";
+            treeNode2.Text = "품목";
+            treeNode3.Name = "User_list";
+            treeNode3.Text = "직원정보";
+            treeNode4.Name = "buy_list";
+            treeNode4.Text = "거래처정보";
+            treeNode5.Name = "Item";
+            treeNode5.Text = "기준정보";
+            treeNode6.Name = "Bar_list";
+            treeNode6.Text = "발주";
+            treeNode7.Name = "Bar_now_list";
+            treeNode7.Text = "발주현황";
+            treeNode8.Name = "sales";
+            treeNode8.Text = "영업관리";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode7});
+            treeNode5,
+            treeNode8});
             this.treeView1.Size = new System.Drawing.Size(200, 999);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.double_click);
@@ -90,7 +94,7 @@ namespace wujudaesselleagi
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.Location = new System.Drawing.Point(200, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1607, 1069);
@@ -117,10 +121,9 @@ namespace wujudaesselleagi
         }
 
         #endregion
-
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel panel1;
         internal System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TreeView treeView1;
     }
 }
 

@@ -51,7 +51,7 @@ namespace wujudaesselleagi
 
                 //저장프로시저명
 
-                Command.CommandText = "dbo.tj_list_S1";
+                Command.CommandText = "dbo.USP_tj_list_S1";
 
                 Command.Parameters.AddWithValue("@tj_cd", "");
 

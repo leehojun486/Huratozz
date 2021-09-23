@@ -60,7 +60,7 @@ namespace wujudaesselleagi
 
                 //저장프로시저명
 
-                Command.CommandText = "dbo.tj_list_S1";
+                Command.CommandText = "dbo.USP_tj_list_S1";
 
                 Command.Parameters.AddWithValue("@tj_cd", "");
 
@@ -105,5 +105,14 @@ namespace wujudaesselleagi
             TB2.Text = dgv_Search.Rows[e.RowIndex].Cells["tj_nm"].Value.ToString();  // 선택한 셀의 name 을 TB2에 저장
         }
 
+        private void barogo(object sender, DataGridViewCellEventArgs e)
+        {
+            TB.Text = dgv_Search.Rows[e.RowIndex].Cells["tj_cd"].Value.ToString();   //선택한 셀의 cide 를 TB에저장
+            TB2.Text = dgv_Search.Rows[e.RowIndex].Cells["tj_nm"].Value.ToString();  // 선택한 셀의 name 을 TB2에 저장
+
+            Passvalue = TB.Text;   //Form2로 데이터를 보냄
+            Passvalue2 = TB2.Text;  //Form2로 데이터를 보냄
+            this.Hide();          // 검색폼 닫기
+        }
     }
 }

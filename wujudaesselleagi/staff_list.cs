@@ -16,6 +16,7 @@ namespace wujudaesselleagi
         public staff_list()
         {
             InitializeComponent();
+            Application.Idle += LoadEven_Ps;
         }
 
         private void btn_select_click(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace wujudaesselleagi
 
                 //저장프로시저명
 
-                Command.CommandText = "dbo.staff_list_S1";
+                Command.CommandText = "dbo.USP_staff_list_S1";
 
                 Command.Parameters.AddWithValue("@staff_cd", "");
 
@@ -338,5 +339,40 @@ namespace wujudaesselleagi
             dgv_Search.AllowUserToAddRows = true;
             dgv_Search.Columns["staff_cd"].ReadOnly = false;
         }
+
+        private void LoadEven_Ps(object sender, EventArgs e)
+        {
+
+            SqlConnection DBconn = new SqlConnection("Server = DESKTOP-CPJQVAP\\LEEHJ; database = Hurato; uid =sa; pwd = 1234 ");
+            DBconn.Open();
+            SqlCommand comand = new SqlCommand();
+            SqlDataAdapter da = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+
+            da.TableMappings.Add("Table", "minor_cms");
+
+            comand.Connection = DBconn;
+
+            comand.CommandType = CommandType.StoredProcedure;
+
+            comand.CommandText = "dbo.usp_codemaster_S2";
+            comand.Parameters.AddWithValue("@major_cd", "AD4");
+
+            da.SelectCommand = comand;
+
+            da.SelectCommand.ExecuteNonQuery();
+
+            da.Fill(ds);
+
+            staff_position.DataSource = ds.DefaultViewManager;
+
+            staff_position.DisplayMember = "minor_cms.minor_nm";
+
+            staff_position.ValueMember = "minor_cms.minor_cd";
+
+            DBconn.Close();
+        }
+
+
     }
 }
