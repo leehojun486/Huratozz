@@ -40,9 +40,11 @@ namespace wujudaesselleagi
             treeNode4});
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("발주");
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("발주현황");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("영업관리", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("구매등록");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("영업관리", new System.Windows.Forms.TreeNode[] {
             treeNode6,
-            treeNode7});
+            treeNode7,
+            treeNode8});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -70,11 +72,13 @@ namespace wujudaesselleagi
             treeNode6.Text = "발주";
             treeNode7.Name = "Bar_now_list";
             treeNode7.Text = "발주현황";
-            treeNode8.Name = "sales";
-            treeNode8.Text = "영업관리";
+            treeNode8.Name = "wh_order";
+            treeNode8.Text = "구매등록";
+            treeNode9.Name = "sales";
+            treeNode9.Text = "영업관리";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode5,
-            treeNode8});
+            treeNode9});
             this.treeView1.Size = new System.Drawing.Size(200, 999);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.double_click);

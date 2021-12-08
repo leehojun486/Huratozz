@@ -127,7 +127,7 @@ namespace wujudaesselleagi
             this.Save_item.TabIndex = 6;
             this.Save_item.Text = "저장";
             this.Save_item.UseVisualStyleBackColor = false;
-            this.Save_item.Click += new System.EventHandler(this.btn_add_click);
+            this.Save_item.Click += new System.EventHandler(this.Btn_Exm);
             // 
             // Save_button
             // 
@@ -180,6 +180,7 @@ namespace wujudaesselleagi
             this.dgv_Search.RowTemplate.Height = 23;
             this.dgv_Search.Size = new System.Drawing.Size(3860, 969);
             this.dgv_Search.TabIndex = 6;
+            this.dgv_Search.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellEditEnd);
             // 
             // item_cd1
             // 
